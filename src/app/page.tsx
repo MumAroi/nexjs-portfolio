@@ -1,19 +1,19 @@
 import AnimateText from "@/components/AnimateText";
+import HierMe from "@/components/HierMe";
 import { LinkArrow } from "@/components/Icon";
 import Image from "next/image";
 import Link from "next/link";
 
 export default function Home() {
 	return (
-		<div className="z-0 inline-block h-full w-full bg-light p-32">
+		<div className="z-0 inline-block h-full w-full bg-light p-32 !pt-0">
 			<div className="flex w-full items-start justify-between">
 				<div className="w-1/2">
 					<Image
 						src="/images/profile/developer-pic-1.png"
-						width="0"
-						height="0"
+						width="580"
+						height="580"
 						sizes="100vw"
-						// fill
 						alt="CodeBuck"
 						className="w-full h-auto"
 					/>
@@ -46,6 +46,18 @@ export default function Home() {
 						</Link>
 					</div>
 				</div>
+			</div>
+			<HierMe />
+			<div className="absolute right-8 bottom-8 inline-block w-24">
+				<Image
+					src="/images/svgs/miscellaneous_icons_1.svg"
+					alt="images"
+					loading="lazy"
+					width="38"
+					height="65"
+					sizes="100vw"
+					className="h-auto w-full"
+				/>
 			</div>
 		</div>
 	);

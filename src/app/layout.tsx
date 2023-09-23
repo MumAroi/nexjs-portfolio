@@ -2,8 +2,9 @@ import NavBar from "@/components/NavBar";
 import "./globals.css";
 import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
+import Footer from "@/components/Footer";
 
-const montserrat = Montserrat({ subsets: ["latin"] });
+const montserrat = Montserrat({ subsets: ["latin"], variable: "--font-mont" });
 
 export const metadata: Metadata = {
 	title: "Create Next App",
@@ -16,6 +17,7 @@ export const metadata: Metadata = {
 		icon: "/favicon.ico",
 	},
 };
+// BlinkMacSystemFont, Roboto, "Noto Color Emoji"
 
 export default function RootLayout({
 	children,
@@ -24,12 +26,13 @@ export default function RootLayout({
 }) {
 	return (
 		<html lang="en">
-			<body className={`${montserrat.className}`}>
+			<body className={`${montserrat.variable} font-mont`}>
 				<div className="bg-light w-full min-h-screen h-full">
 					<NavBar />
 					<div className="flex min-h-screen items-center text-dark">
 						{children}
 					</div>
+					<Footer />
 				</div>
 			</body>
 		</html>
