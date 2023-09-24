@@ -1,6 +1,5 @@
 "use client";
 import React, { useEffect, useRef } from "react";
-// import type { Metadata } from "next";
 import AnimateText from "@/components/AnimateText";
 import Image from "next/image";
 import { useInView, useMotionValue, useSpring } from "framer-motion";
@@ -32,11 +31,6 @@ const AnimateNumbers = ({ value }: { value: number }) => {
 
 	return <span ref={ref} />;
 };
-
-// export const metadata: Metadata = {
-// 	title: "CodeBuck | About Page",
-// 	description: "",
-// };
 
 const AboutPage = (props: Props) => {
 	return (

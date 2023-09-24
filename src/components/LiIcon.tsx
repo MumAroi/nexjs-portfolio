@@ -1,3 +1,4 @@
+"use client"
 import React, { RefObject } from "react";
 import { motion, useScroll } from "framer-motion";
 
@@ -7,6 +8,7 @@ type Props = {
 
 const LiIcon = ({ reference }: Props) => {
 	const { scrollYProgress } = useScroll({
+		layoutEffect: false,
 		target: reference,
 		offset: ["center end", "center center"],
 	});

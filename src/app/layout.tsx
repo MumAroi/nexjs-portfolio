@@ -17,7 +17,6 @@ export const metadata: Metadata = {
 		icon: "/favicon.ico",
 	},
 };
-// BlinkMacSystemFont, Roboto, "Noto Color Emoji"
 
 export default function RootLayout({
 	children,
