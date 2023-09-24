@@ -6,6 +6,7 @@ import Image from "next/image";
 import { useInView, useMotionValue, useSpring } from "framer-motion";
 import Skills from "@/components/Skills";
 import Experience from "@/components/Experience";
+import Education from "@/components/Education";
 
 type Props = {};
 
@@ -107,6 +108,7 @@ const AboutPage = (props: Props) => {
 				</div>
 				<Skills />
 				<Experience />
+				<Education />
 			</div>
 		</div>
 	);
