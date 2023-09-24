@@ -5,11 +5,12 @@ import AnimateText from "@/components/AnimateText";
 import Image from "next/image";
 import { useInView, useMotionValue, useSpring } from "framer-motion";
 import Skills from "@/components/Skills";
+import Experience from "@/components/Experience";
 
 type Props = {};
 
 const AnimateNumbers = ({ value }: { value: number }) => {
-	const ref = useRef<HTMLSpanElement | null>(null);
+	const ref = useRef<HTMLSpanElement>(null);
 	const motionValue = useMotionValue(0);
 	const springValue = useSpring(motionValue, { duration: 3000 });
 	const isInView = useInView(ref, { once: true });
@@ -105,6 +106,7 @@ const AboutPage = (props: Props) => {
 					</div>
 				</div>
 				<Skills />
+				<Experience />
 			</div>
 		</div>
 	);
