@@ -4,6 +4,7 @@ import React, { useEffect, useRef } from "react";
 import AnimateText from "@/components/AnimateText";
 import Image from "next/image";
 import { useInView, useMotionValue, useSpring } from "framer-motion";
+import Skills from "@/components/Skills";
 
 type Props = {};
 
@@ -103,6 +104,7 @@ const AboutPage = (props: Props) => {
 						</div>
 					</div>
 				</div>
+				<Skills />
 			</div>
 		</div>
 	);
