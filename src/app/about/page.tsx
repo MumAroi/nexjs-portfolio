@@ -68,9 +68,8 @@ const AboutPage = (props: Props) => {
 							src="/images/profile/developer-pic-2.jpg"
 							alt="image"
 							className="w-full h-auto"
-							width={0}
-							height={0}
-							sizes="100vw"
+							width={1920}
+							height={2345}
 						/>
 					</div>
 					<div className="col-span-2 flex flex-col items-end justify-between">
