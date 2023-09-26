@@ -3,7 +3,7 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 import Footer from "@/components/Footer";
-
+import Script from "next/script";
 const montserrat = Montserrat({ subsets: ["latin"], variable: "--font-mont" });
 
 export const metadata: Metadata = {
@@ -26,13 +26,22 @@ export default function RootLayout({
 	return (
 		<html lang="en">
 			<body className={`${montserrat.variable} font-mont`}>
-				<div className="bg-light w-full min-h-screen h-full">
+				<div className="w-full min-h-screen h-full bg-light dark:bg-dark">
 					<NavBar />
-					<div className="flex min-h-screen items-center text-dark">
+					<div className="flex min-h-screen items-center text-dark dark:text-light">
 						{children}
 					</div>
 					<Footer />
 				</div>
+				<Script id="theme-switcher" strategy="beforeInteractive">
+				{`
+					if (localStorage.theme === "dark" || (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+						document.documentElement.classList.add("dark")
+					} else {
+						document.documentElement.classList.remove("dark")
+					}
+				`}
+				</Script>
 			</body>
 		</html>
 	);

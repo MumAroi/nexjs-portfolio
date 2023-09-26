@@ -26,8 +26,8 @@ const FeaturedProject = ({
 	github: string;
 }) => {
 	return (
-		<article className="w-full flex items-center justify-between rounded-3xl border border-solid border-dark bg-light shadow-2xl p-12 relative rounded-br-2xl">
-			<div className="absolute top-0 -right-3 -z-10 w-[101%] h-[103%] rounded-[2.5rem] bg-dark rounded-br-3xl" />
+		<article className="w-full flex items-center justify-between rounded-3xl border border-solid border-dark bg-light shadow-2xl p-12 relative rounded-br-2xl dark:bg-dark dark:border-light">
+			<div className="absolute top-0 -right-3 -z-10 w-[101%] h-[103%] rounded-[2.5rem] bg-dark rounded-br-3xl dark:bg-light" />
 			<Link
 				href={link}
 				target={"_blank"}
@@ -37,23 +37,24 @@ const FeaturedProject = ({
 					src={image}
 					alt={title}
 					className="w-full h-auto"
-					loading={"lazy"}
 					width={1280}
 					height={720}
 					whileHover={{ scale: 1.05 }}
 					transition={{ duration: 0.2 }}
+					sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw"
+					priority
 				/>
 			</Link>
 			<div className="w-1/2 flex flex-col items-start justify-between pl-6">
-				<span className="text-primary font-medium text-xl">{type}</span>
+				<span className="text-primary font-medium text-xl dark:text-primaryDark">{type}</span>
 				<Link
 					href={link}
 					target={"_blank"}
 					className="hover:underline underline-offset-2"
 				>
-					<h2 className="my-2 w-full text-left text-4xl font-bold">{title}</h2>
+					<h2 className="my-2 w-full text-left text-4xl font-bold dark:text-light">{title}</h2>
 				</Link>
-				<p className="my-2 font-medium text-dark ">{summary}</p>
+				<p className="my-2 font-medium text-dark dark:text-light">{summary}</p>
 				<div className="mt-2 flex items-center">
 					<Link href={github} target={"_blank"} className="w-10">
 						<GithubIcon />
@@ -61,7 +62,7 @@ const FeaturedProject = ({
 					<Link
 						href={github}
 						target={"_blank"}
-						className="ml-4 rounded-lg bg-dark text-light p-2 px-6 text-lg font-semibold"
+						className="ml-4 rounded-lg bg-dark text-light p-2 px-6 text-lg font-semibold dark:bg-light dark:text-dark"
 					>
 						Visit Project
 					</Link>
@@ -85,8 +86,8 @@ const Project = ({
 	github: string;
 }) => {
 	return (
-		<article className="w-full flex flex-col items-center justify-center rounded-2xl border border-solid border-dark bg-light p-6 relative">
-			<div className="absolute top-0 -right-3 -z-10 w-[101%] h-[103%] rounded-[2rem] bg-dark rounded-br-3xl" />
+		<article className="w-full flex flex-col items-center justify-center rounded-2xl border border-solid border-dark bg-light p-6 relative dark:bg-dark dark:border-light">
+			<div className="absolute top-0 -right-3 -z-10 w-[101%] h-[103%] rounded-[2rem] bg-dark rounded-br-3xl dark:bg-light" />
 			<Link
 				href={link}
 				target={"_blank"}
@@ -96,15 +97,16 @@ const Project = ({
 					src={image}
 					alt={title}
 					className="w-full h-auto"
-					loading={"lazy"}
 					width={1280}
 					height={720}
+					sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw"
+					priority
 					whileHover={{ scale: 1.05 }}
 					transition={{ duration: 0.2 }}
 				/>
 			</Link>
 			<div className="w-full flex flex-col items-start justify-between mt-4">
-				<span className="text-primary font-medium text-xl">{type}</span>
+				<span className="text-primary font-medium text-xl dark:text-primaryDark">{type}</span>
 				<Link
 					href={link}
 					target={"_blank"}
@@ -132,7 +134,7 @@ const Project = ({
 const ProjectPage = (props: Props) => {
 	return (
 		<div className="w-full mb-16 flex flex-col items-center justify-center">
-			<div className="z-0 inline-block h-full w-full bg-light p-32 pt-16">
+			<div className="z-0 inline-block h-full w-ful p-32 pt-16">
 				<AnimateText text="Imagination Trumps Knowledge!" className="mb-16" />
 				<div className="grid grid-cols-12 gap-24 gap-y-32">
 					<div className="col-span-12">
