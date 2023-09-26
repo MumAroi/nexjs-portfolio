@@ -28,7 +28,7 @@ export default function RootLayout({
 			<body className={`${montserrat.variable} font-mont`}>
 				<div className="w-full min-h-screen h-full bg-light dark:bg-dark">
 					<NavBar />
-					<div className="flex min-h-screen items-center text-dark dark:text-light">
+					<div className="flex min-h-screen items-center text-dark dark:text-light p-32 pt-16 xl:p-24 lg:p-16 md:p-12 sm:p-8">
 						{children}
 					</div>
 					<Footer />

@@ -5,10 +5,10 @@ type Props = {};
 
 function Footer(props: Props) {
 	return (
-		<footer className="w-full border-t-2 border-solid border-dark font-medium text-lg dark:text-light dark:border-light">
-			<div className="z-0 h-full w-full p-32 py-8 flex items-center justify-between">
+		<footer className="w-full border-t-2 border-solid border-dark font-medium text-lg dark:text-light dark:border-light sm:text-base">
+			<div className="z-0 h-full w-full py-8 flex items-center justify-between lg:flex-col lg:py-6">
 				<span>{new Date().getFullYear()} &copy; All Rights Reserved. </span>
-				<div className="flex items-center">
+				<div className="flex items-center lg:py-2">
 					Build With
           <span className="text-primary text-2xl px-1 dark:text-primaryDark">&#9825;</span>
 					by&nbsp;

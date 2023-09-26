@@ -58,7 +58,7 @@ const MovingImg = ({
 				width={1280}
 				height={720}
 				loading="lazy"
-				className="z-10 w-96 h-auto hidden absolute rounded-lg"
+				className="z-10 w-96 h-auto hidden absolute rounded-lg md:!hidden"
 			/>
 		</Link>
 	);
@@ -98,12 +98,14 @@ const FeatureArticle = ({
 				/>
 			</Link>
 			<Link href={link} target={"_blank"}>
-				<h2 className="capitalize text-2xl font-bold my-2 mt-4 hover:underline">
+				<h2 className="capitalize text-2xl font-bold my-2 mt-4 hover:underline xs:text-lg">
 					{title}
 				</h2>
 			</Link>
 			<p className="text-sm mb-2">{summary}</p>
-			<span className="text-primary font-semibold dark:text-primaryDark">{time}</span>
+			<span className="text-primary font-semibold dark:text-primaryDark">
+				{time}
+			</span>
 		</li>
 	);
 };
@@ -121,13 +123,15 @@ const Article = ({
 }) => {
 	return (
 		<motion.li
-			className="relative w-full p-4 py-6 my-4 rounded-xl flex items-center justify-between bg-light text-dark first:mt-0 border border-solid border-dark border-r-4 border-b-4 dark:border-light dark:bg-dark dark:text-light"
+			className="relative w-full p-4 py-6 my-4 rounded-xl flex items-center justify-between bg-light text-dark first:mt-0 border border-solid border-dark border-r-4 border-b-4 dark:border-light dark:bg-dark dark:text-light sm:flex-col"
 			initial={{ y: 200 }}
 			whileInView={{ y: 0, transition: { duration: 0.5, ease: "easeInOut" } }}
 			viewport={{ once: true }}
 		>
 			<MovingImg title={title} link={link} image={image} />
-			<span className="text-primary font-semibold pl-4 dark:text-primaryDark">{date}</span>
+			<span className="text-primary font-semibold pl-4 dark:text-primaryDark sm:self-start sm:pl-0 xs:text-sm">
+				{date}
+			</span>
 		</motion.li>
 	);
 };
@@ -135,9 +139,12 @@ const Article = ({
 const ArticlePage = (props: Props) => {
 	return (
 		<div className="w-full mb-16 flex flex-col items-center justify-center overflow-hidden">
-			<div className="z-0 inline-block h-full w-ful p-32 pt-16">
-				<AnimateText text="Words Can Change The World!" className="mb-16" />
-				<ul className="grid grid-cols-2 gap-12">
+			<div className="z-0 inline-block h-full w-ful">
+				<AnimateText
+					text="Words Can Change The World!"
+					className="mb-16 lg:!text-7xl sm:!text-6xl xs:!text-4xl sm:mb-8"
+				/>
+				<ul className="grid grid-cols-2 gap-12 lg:gap-8 md:grid-cols-1 md:gap-y-16">
 					<FeatureArticle
 						title="Build A Custom Pagination Component In Reactjs From Scratch"
 						summary="Learn how to build a custom pagination component in ReactJS from scratch. Follow this step-by-step guide to integrate Pagination component in your ReactJS project."
