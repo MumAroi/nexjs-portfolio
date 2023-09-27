@@ -1,10 +1,6 @@
-import NavBar from "@/components/NavBar";
 import "./globals.css";
 import type { Metadata } from "next";
-import { Montserrat } from "next/font/google";
-import Footer from "@/components/Footer";
-import Script from "next/script";
-const montserrat = Montserrat({ subsets: ["latin"], variable: "--font-mont" });
+import Client from "./client";
 
 export const metadata: Metadata = {
 	title: "Create Next App",
@@ -24,25 +20,6 @@ export default function RootLayout({
 	children: React.ReactNode;
 }) {
 	return (
-		<html lang="en">
-			<body className={`${montserrat.variable} font-mont`}>
-				<div className="w-full min-h-screen h-full bg-light dark:bg-dark">
-					<NavBar />
-					<div className="flex min-h-screen items-center text-dark dark:text-light p-32 pt-16 xl:p-24 lg:p-16 md:p-12 sm:p-8">
-						{children}
-					</div>
-					<Footer />
-				</div>
-				<Script id="theme-switcher" strategy="beforeInteractive">
-				{`
-					if (localStorage.theme === "dark" || (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
-						document.documentElement.classList.add("dark")
-					} else {
-						document.documentElement.classList.remove("dark")
-					}
-				`}
-				</Script>
-			</body>
-		</html>
+		<Client>{children}</Client>
 	);
 }
