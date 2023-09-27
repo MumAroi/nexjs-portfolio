@@ -24,7 +24,7 @@ export default function Home() {
 				<div className="w-1/2 md:w-full">
 					<Image
 						src="/images/profile/developer-pic-1.png"
-						alt="CodeBuck"
+						alt="image"
 						className="w-full h-auto lg:hidden md:inline-block md:w-full"
 						width="580"
 						height="580"
