@@ -58,7 +58,9 @@ const FeaturedProject = ({
 						{title}
 					</h2>
 				</Link>
-				<p className="my-2 font-medium text-dark dark:text-light sm:text-sm">{summary}</p>
+				<p className="my-2 font-medium text-dark dark:text-light sm:text-sm">
+					{summary}
+				</p>
 				<div className="mt-2 flex items-center">
 					<Link href={github} target={"_blank"} className="w-10">
 						<GithubIcon />
@@ -118,7 +120,9 @@ const Project = ({
 					target={"_blank"}
 					className="hover:underline underline-offset-2"
 				>
-					<h2 className="my-2 w-full text-left text-3xl font-bold lg:text-2xl">{title}</h2>
+					<h2 className="my-2 w-full text-left text-3xl font-bold lg:text-2xl">
+						{title}
+					</h2>
 				</Link>
 				<div className="w-full mt-2 flex items-center justify-between">
 					<Link
@@ -139,7 +143,18 @@ const Project = ({
 
 const ProjectPage = (props: Props) => {
 	return (
-		<div className="w-full mb-16 flex flex-col items-center justify-center">
+		<motion.div
+			initial={{
+				opacity: 0,
+			}}
+			animate={{
+				opacity: 1,
+				transition: {
+					delay: 0.8,
+				},
+			}}
+			className="w-full mb-16 flex flex-col items-center justify-center"
+		>
 			<div className="z-0 inline-block h-full w-ful">
 				<AnimateText
 					text="Imagination Trumps Knowledge!"
@@ -204,7 +219,7 @@ const ProjectPage = (props: Props) => {
 					</div>
 				</div>
 			</div>
-		</div>
+		</motion.div>
 	);
 };
 

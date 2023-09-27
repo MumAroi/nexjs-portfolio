@@ -2,7 +2,7 @@
 import React, { useEffect, useRef } from "react";
 import AnimateText from "@/components/AnimateText";
 import Image from "next/image";
-import { useInView, useMotionValue, useSpring } from "framer-motion";
+import { motion, useInView, useMotionValue, useSpring } from "framer-motion";
 import Skills from "@/components/Skills";
 import Experience from "@/components/Experience";
 import Education from "@/components/Education";
@@ -34,7 +34,18 @@ const AnimateNumbers = ({ value }: { value: number }) => {
 
 const AboutPage = (props: Props) => {
 	return (
-		<div className="flex w-full flex-col items-center justify-center">
+		<motion.div
+			initial={{
+				opacity: 0,
+			}}
+			animate={{
+				opacity: 1,
+				transition: {
+					delay: 0.8,
+				},
+			}}
+			className="flex w-full flex-col items-center justify-center"
+		>
 			<div className="z-0 inline-block h-full w-full">
 				<AnimateText
 					text="Passion Fuels Purpose!"
@@ -104,7 +115,7 @@ const AboutPage = (props: Props) => {
 				<Experience />
 				<Education />
 			</div>
-		</div>
+		</motion.div>
 	);
 };
 

@@ -138,7 +138,18 @@ const Article = ({
 
 const ArticlePage = (props: Props) => {
 	return (
-		<div className="w-full mb-16 flex flex-col items-center justify-center overflow-hidden">
+		<motion.div
+			initial={{
+				opacity: 0,
+			}}
+			animate={{
+				opacity: 1,
+				transition: {
+					delay: 0.8,
+				},
+			}}
+			className="w-full mb-16 flex flex-col items-center justify-center overflow-hidden"
+		>
 			<div className="z-0 inline-block h-full w-ful">
 				<AnimateText
 					text="Words Can Change The World!"
@@ -196,7 +207,7 @@ const ArticlePage = (props: Props) => {
 					/>
 				</ul>
 			</div>
-		</div>
+		</motion.div>
 	);
 };
 

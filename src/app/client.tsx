@@ -15,19 +15,19 @@ export default function Client({ children }: { children: ReactNode }) {
 	return (
 		<html lang="en">
 			<body className={`${montserrat.variable} font-mont`}>
-				<AnimatePresence mode="wait">
-					<div
-						key={pathname}
-						className="w-full min-h-screen h-full bg-light dark:bg-dark"
-					>
-						<TransitionEffect />
-						<NavBar />
-						<div className="flex min-h-screen items-center text-dark dark:text-light p-32 pt-16 xl:p-24 lg:p-16 md:p-12 sm:p-8">
+				<div className="w-full min-h-screen h-full bg-light dark:bg-dark">
+					<NavBar />
+					<AnimatePresence mode="wait">
+						<div
+							key={pathname}
+							className="flex min-h-screen items-center text-dark dark:text-light p-32 pt-16 xl:p-24 lg:p-16 md:p-12 sm:p-8"
+						>
+							<TransitionEffect />
 							{children}
 						</div>
-						<Footer />
-					</div>
-				</AnimatePresence>
+					</AnimatePresence>
+					<Footer />
+				</div>
 				<Script id="theme-switcher" strategy="beforeInteractive">
 					{`
 					if (localStorage.theme === "dark" || (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)) {

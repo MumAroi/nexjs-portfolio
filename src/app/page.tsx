@@ -1,12 +1,25 @@
+"use client";
 import AnimateText from "@/components/AnimateText";
 import HierMe from "@/components/HierMe";
 import { LinkArrow } from "@/components/Icon";
 import Image from "next/image";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 export default function Home() {
 	return (
-		<div className="z-0 inline-block h-full w-full pt-0 md:pt-16 sm:pt-8">
+		<motion.div
+			initial={{
+				opacity: 0,
+			}}
+			animate={{
+				opacity: 1,
+				transition: {
+					delay: 0.8,
+				},
+			}}
+			className="z-0 inline-block h-full w-full pt-0 md:pt-16 sm:pt-8"
+		>
 			<div className="flex w-full items-center justify-between lg:flex-col">
 				<div className="w-1/2 md:w-full">
 					<Image
@@ -60,6 +73,6 @@ export default function Home() {
 					className="h-auto w-full"
 				/>
 			</div>
-		</div>
+		</motion.div>
 	);
 }

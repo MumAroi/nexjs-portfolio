@@ -1,3 +1,4 @@
+"use client";
 import Link from "next/link";
 import React from "react";
 
@@ -10,13 +11,21 @@ function Footer(props: Props) {
 				<span>{new Date().getFullYear()} &copy; All Rights Reserved. </span>
 				<div className="flex items-center lg:py-2">
 					Build With
-          <span className="text-primary text-2xl px-1 dark:text-primaryDark">&#9825;</span>
+					<span className="text-primary text-2xl px-1 dark:text-primaryDark">
+						&#9825;
+					</span>
 					by&nbsp;
 					<Link href="www.google.com" className="underline underline-offset-2">
 						Refill
 					</Link>
 				</div>
-				<Link href="/" target={"_blank"}  className="underline underline-offset-2">Say Hello</Link>
+				<Link
+					href="/"
+					target={"_blank"}
+					className="underline underline-offset-2"
+				>
+					Say Hello
+				</Link>
 			</div>
 		</footer>
 	);
