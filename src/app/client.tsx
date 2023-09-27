@@ -1,7 +1,7 @@
 "use client";
 import Footer from "@/components/Footer";
 import NavBar from "@/components/NavBar";
-import { motion, AnimatePresence } from "framer-motion";
+import { AnimatePresence } from "framer-motion";
 import { usePathname } from "next/navigation";
 import Script from "next/script";
 import { ReactNode } from "react";
@@ -12,12 +12,11 @@ const montserrat = Montserrat({ subsets: ["latin"], variable: "--font-mont" });
 // Client wraps any client/rsc components with AnimatePresence
 export default function Client({ children }: { children: ReactNode }) {
 	const pathname = usePathname();
-	console.log(pathname);
 	return (
 		<html lang="en">
 			<body className={`${montserrat.variable} font-mont`}>
 				<AnimatePresence mode="wait">
-					<motion.div
+					<div
 						key={pathname}
 						className="w-full min-h-screen h-full bg-light dark:bg-dark"
 					>
@@ -27,7 +26,7 @@ export default function Client({ children }: { children: ReactNode }) {
 							{children}
 						</div>
 						<Footer />
-					</motion.div>
+					</div>
 				</AnimatePresence>
 				<Script id="theme-switcher" strategy="beforeInteractive">
 					{`
